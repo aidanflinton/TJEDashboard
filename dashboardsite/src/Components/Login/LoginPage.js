@@ -24,7 +24,7 @@ function LoginPage() {
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
         </Stack>
-        {usr && pass && <LoginPage user={usr} password={pass} />}
+        {usr && pass && <LoginResult user={usr} password={pass} />}
     </>
     );
 }

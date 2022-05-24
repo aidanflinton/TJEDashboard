@@ -1,23 +1,36 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, increment } from "firebase/firestore";
+import {useState, useEffect} from "react"
 
 function LoginResult(props) {
     const firebaseConfig = {
-    apiKey: "AIzaSyAx5vLAIlbRobTXZ85pYDooKk1aO_k1p6A",
-    authDomain: "tjedashboard.firebaseapp.com",
-    projectId: "tjedashboard",
-    storageBucket: "tjedashboard.appspot.com",
-    messagingSenderId: "665225770453",
-    appId: "1:665225770453:web:226cc7ff93a0dea909795c",
-    measurementId: "G-HBVQ6HRPRT"
+        apiKey: process.env.REACT_APP_apiKey,
+        authDomain: process.env.REACT_APP_authDomain,
+        projectId: process.env.REACT_APP_projectId,
+        storageBucket: process.env.REACT_APP_storageBucket,
+        messagingSenderId: process.env.REACT_APP_messagingSenderId,
+        appId: process.env.REACT_APP_appId,
+        measurementId: "G-HBVQ6HRPRT"
     };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    
+    const [teachers, setTeachers] = useState([]);
+
+    useEffect(() => {
+        const teacherList = []
+        getDocs(collection(db, "teachers"))  // get the collection
+        .then((allTeachers) => {  // format each response into an array as we want it
+            allTeachers.forEach((teacher) => teacherList.push({ firstName: teacher.firstName, lastName:teacher.lastName, email:teacher.email, password:teacher.password, subject:teacher.subject, ...teacher.data() }))
+            setTeachers(teacherList)
+    })
+  }, [db])
+
+  console.log(teachers);
 
   return (
     <div className="App">
-      {props.user}
-      {props.password}
+      {teachers.map((item) => <h1>{item}</h1>)}
     </div>
   );
 }
