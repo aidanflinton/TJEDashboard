@@ -1,7 +1,6 @@
-import logo from '../../logo.svg';
 import Navbar from './Navbar.js'
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Login from '../Login/LoginPage.js';
 
 function Page() {
