@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Page from './Components/Page/Page.js';
+import Page from './Components/Page/MainPage.js';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        Placeholder
+        TJE Website
       </header>
       <Page loggedIn={log}/>
     </div>

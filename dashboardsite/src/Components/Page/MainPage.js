@@ -2,7 +2,7 @@ import logo from '../../logo.svg';
 import Navbar from './Navbar.js'
 import * as React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-
+import Login from '../Login/LoginPage.js';
 
 function Page() {
   return (
@@ -17,7 +17,7 @@ function Page() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="class" element={<Class />} />
           
-          <Route path="*" element={<Erorr />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </div>
@@ -58,13 +58,6 @@ function Stu() {
     </main>
   );
 }
-function Login() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Login</h2>
-    </main>
-  );
-}
 function Class() {
   return (
     <main style={{ padding: "1rem 0" }}>
@@ -79,7 +72,7 @@ function Dashboard() {
     </main>
   );
 }
-function Erorr() {
+function Error() {
   return (
     <main style={{ padding: "1rem 0" }}>
         <h2>404 not found</h2>

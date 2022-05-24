@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-function Navbar(props) {
+function Navbar() {
   return (
     <div className="App">
       <nav>
