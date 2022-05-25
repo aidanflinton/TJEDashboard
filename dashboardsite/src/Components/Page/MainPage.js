@@ -2,6 +2,7 @@ import Navbar from './Navbar.js'
 import * as React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Login from '../Login/LoginPage.js';
+import Calendar from '../Calendar/Calendar.js'
 
 function Page() {
   return (
@@ -35,14 +36,6 @@ function Home() {
     </main>
   );
 }
-
-function Calendar() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Calendar</h2>
-    </main>
-  );
-}
 function TeachDir() {
   return (
     <main style={{ padding: "1rem 0" }}>
@@ -50,17 +43,17 @@ function TeachDir() {
     </main>
   );
 }
+function Class() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+      <h2>Class becuase Im doing calendar rn</h2>
+    </main>
+  );
+}
 function Stu() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>StuDir</h2>
-    </main>
-  );
-}
-function Class() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Class</h2>
     </main>
   );
 }
