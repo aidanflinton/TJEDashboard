@@ -1,9 +1,12 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-import LoginResult from './LoginResult.js'
+import LoginResults from './LoginResults.js';
+
+import db from '../../firebase.js';
+import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, increment } from "firebase/firestore";
 
 function LoginPage() {
     const [usr, setUsr] = useState(null);
@@ -23,10 +26,24 @@ function LoginPage() {
             <TextField id="username" label="Username" type="search"  inputRef={textFieldRef1} size="small"/>
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
-        </Stack>
-        {usr && pass && <LoginResult user={usr} password={pass} />}
+        </Stack>  
+        {usr && pass && <LoginResults user={usr} pass={pass}/>}   
     </>
     );
 }
 
 export default LoginPage;
+
+/*
+ {if(teacherId !== 0){
+        <div className="App">
+            <>You successfully logged n</>
+        </div>
+        }
+        else{
+        <div className="App">
+            <>Your username or password is incorrect, refresh the page and try again</>
+        </div>
+        }}
+
+        */
