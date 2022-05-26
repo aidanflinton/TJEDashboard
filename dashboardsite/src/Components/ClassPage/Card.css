@@ -63,7 +63,7 @@ body{
     padding: 0 1rem;
 
 }
-.card__btn{
+/* .card__btn{
     padding: 1 rem;
     font-weight: bold;
     font-family: inherit;
@@ -76,13 +76,13 @@ body{
     color:black;
     border-radius: 0.2rem;
     transition: background 200ms ease-in,color 200ms ease-in;
-}
+} */
 
-:hover{
+/* :hover{
     transform: scale(1.02);
-}
-:hover card__btn{
+} */
+/* :hover card__btn{
     background-color: grey;
     color:white
-}
+} */
 
