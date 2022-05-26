@@ -1,12 +1,9 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 import LoginResults from './LoginResults.js';
-
-import db from '../../firebase.js';
-import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, increment } from "firebase/firestore";
 
 function LoginPage() {
     const [usr, setUsr] = useState(null);
@@ -27,7 +24,7 @@ function LoginPage() {
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
         </Stack>  
-        {usr && pass && <LoginResults user={usr} pass={pass}/>}   
+        {usr && pass && <LoginResults user={usr} pass={pass}/>} 
     </>
     );
 }

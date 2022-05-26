@@ -4,26 +4,16 @@ import Stack from '@mui/material/Stack';
 import { useState, useEffect, useRef } from "react";
 
 import db from '../../firebase.js';
-import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, increment } from "firebase/firestore";
+import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, increment, Timestamp  } from "firebase/firestore";
 
 import CalendarDisp from './CalendarDisp.js';
-import AddEvent from './AddEvent.js';
 
 function Calendar() {
     const [events, setEvents] = useState([]);
     const [btn, setBtn] = useState(false);
-
-    const [name, setName] = useState(null);
-    const [date, setDate] = useState(null);
-    const [desc, setDesc] = useState(null);
     const textFieldRef1 = useRef();
     const textFieldRef2 = useRef();
     const textFieldRef3 = useRef();
-    const handleClick = (param1, param2, param3) => {
-        setName(param1);
-        setDate(param2);
-        setDesc(param3)
-    }
 
     useEffect(() => {
         const eventList = []
@@ -34,12 +24,30 @@ function Calendar() {
             }))
         },
             console.log(eventList),
-            eventList.sort((a, b) =>  (a.date.toMillis() < b.date.toMillis()) ? 1 : -1),
+            eventList.sort((a, b) =>  (a.date.seconds > b.date.seconds) ? 1 : -1),
             console.log(eventList),
             setEvents(eventList),
-            
         )
     }, [])
+
+    const addEvent = (e) => {
+    e.preventDefault();  // no reloading the page
+
+    const newEvent = {
+        responseText: textFieldRef1.current.value,
+        date: Timestamp.fromDate(new Date(textFieldRef2.current.value)),
+        description: textFieldRef3.current.value
+    }
+    addDoc(collection(db, "events"), newEvent) // add the new response 
+    .then((docRef) => {
+      setEvents([...events, {name: docRef.name, ...newEvent}])  // update the state variable
+    })
+    .catch((e) => console.error(e))
+
+    textFieldRef1.current.value = "" 
+    textFieldRef2.current.value = ""
+    textFieldRef3.current.value = ""
+  }
 
     console.log(events);
 
@@ -51,9 +59,13 @@ function Calendar() {
             <TextField id="eventName" label="Event Name" type="search"  inputRef={textFieldRef1} size="small"/>
             <TextField id="eventDate" label="Event Date" type="search"  helperText="YYYY/MM/DD" inputRef={textFieldRef2} size="small"/>
             <TextField id="eventDesc" label="Event Description" type="search"  inputRef={textFieldRef3} size="small"/>
-            <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value, textFieldRef3.current.value)}>Add New Event</Button>
         </Stack>  
-        {name && date && desc && <AddEvent name={name} date={date} desc={desc}/>}
+        <form onSubmit={addEvent} >
+            <input type="text" ref={textFieldRef1} />
+            <input type="text" ref={textFieldRef2} />
+            <input type="text" ref={textFieldRef3} />
+            <input type="submit" />
+        </form>
     </>
     );
 }
@@ -63,5 +75,5 @@ export default Calendar;
 
 /*
 eventList.sort((a, b) => b.date.seconds - a.date.seconds),
-
+<Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value, textFieldRef3.current.value)}>Add New Event</Button>
 */
