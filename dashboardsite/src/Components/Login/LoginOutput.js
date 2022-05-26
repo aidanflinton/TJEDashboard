@@ -4,6 +4,7 @@ function LoginOutput(props) {
 
 if(props.teacherId){
     console.log(props.teacherId);
+    props.logIn(true);
   return (
     <div className="App">
         You successfully logged in
@@ -12,7 +13,7 @@ if(props.teacherId){
 }
     return (
     <div className="App"> 
-        Your user name or password was wrong, please try again
+        Your user name or password was wrong, please refresh the page and try again
     </div>
   );
   

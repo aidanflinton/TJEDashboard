@@ -9,7 +9,7 @@ import Sidebar from "../SideBar/SideBar.js"
 import Card from "../ClassPage/Card.js"
 
 
-function Page() {
+function Page(props) {
   return (
     <div className="App">
     <Routes>
@@ -18,9 +18,9 @@ function Page() {
           <Route path="calendar" element={<Calendar />} />
           <Route path="teachers" element={<TeacherDirectory />} />
           <Route path="students" element={<StudentDirectroy />} />
-          <Route path="login" element={<Login/>} />
+          <Route path="login" element={<Login logIn={props.logIn}/>} />
           <Route path="dashboard" element={<Sidebar />} />
-          <Route path="class" element={<Class />} />
+          <Route path="class" element={<Class loggedIn={props.loggedIn}/>} />
           
           <Route path="*" element={<Error />} />
         </Route>
@@ -41,7 +41,8 @@ function Home() {
     </main>
   );
 }
-function Class() {
+function Class(props) {
+  if(props.loggedIn){
   return (
     <main style={{ padding: "1rem 0" }}>
       <Card
@@ -66,6 +67,12 @@ function Class() {
     grade="A-"
     />
     </main>
+  );
+  }
+  return(
+    <>
+      Login to acces this material
+    </>
   );
 }
 function Dashboard() {

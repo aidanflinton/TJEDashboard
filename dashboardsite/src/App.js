@@ -1,9 +1,10 @@
 import './App.css';
 import "./Components/ClassPage/Card.css"
 import Page from './Components/Page/MainPage.js';
+import { useState, useEffect}  from "react";
 
 function App() {
-  let log = false;
+  const [log, setLog] = useState(false);
 
   return (
     <>
@@ -11,7 +12,7 @@ function App() {
       <header>
         TJE Website
       </header>
-      <Page loggedIn={log}/>
+      <Page loggedIn={log} logIn={setLog}/>
     </div>
   </>
   )

@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 
 import LoginResults from './LoginResults.js';
 
-function LoginPage() {
+function LoginPage(props) {
     const [usr, setUsr] = useState(null);
     const [pass, setPass] = useState(null);
 
@@ -24,7 +24,7 @@ function LoginPage() {
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
         </Stack>  
-        {usr && pass && <LoginResults user={usr} pass={pass}/>} 
+        {usr && pass && <LoginResults logIn={props.logIn} user={usr} pass={pass}/>} 
     </>
     );
 }
