@@ -1,7 +1,8 @@
 import './App.css';
 import "./Components/ClassPage/Card.css"
 import Page from './Components/Page/MainPage.js';
-import { useState, useEffect}  from "react";
+import SideBar from './Components/SideBar/SideBar.js';
+import { useState }  from "react";
 
 function App() {
   const [log, setLog] = useState(false);
@@ -13,6 +14,7 @@ function App() {
         TJE Website
       </header>
       <Page loggedIn={log} logIn={setLog}/>
+      <SideBar/>
     </div>
   </>
   )

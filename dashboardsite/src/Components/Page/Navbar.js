@@ -4,9 +4,8 @@ function Navbar() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link> |{" "}
+        <Link to="/">Dashboard</Link> |{" "}
         <Link to="/calendar">Calendar</Link> |{" "}
-        <Link to="/dashboard">Dashboard</Link> |{" "}
         <Link to="/class">Class Page</Link> |{" "}
         <Link to="/teachers">Teacher Directory</Link> |{" "}
         <Link to="/students">Student Directory</Link> |{" "}
