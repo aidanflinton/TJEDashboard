@@ -43,7 +43,10 @@ function Home() {
 }
 function Class() {
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <div className='Wrapper'>
+   
+    <Sidebar/>
+
       <Card
     img="https://media.istockphoto.com/photos/female-teacher-pointing-with-finger-at-mathematical-equation-on-in-picture-id1080232656?k=20&m=1080232656&s=612x612&w=0&h=7OszmnpcTXIiIhqUXUL3sOaI-nn9DisJU8z3ceeHL5k="
     title="Jane Doe"
@@ -65,7 +68,9 @@ function Class() {
     contact= "johndoe@virginia.edu"
     grade="A-"
     />
-    </main>
+    </div>
+
+
   );
 }
 function Dashboard() {

@@ -20,7 +20,7 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
     gap:2rem;
     margin-left: 300px;
-    margin-bottom: 300px;
+    margin-top: 100px;
     justify-content:top;
 }
 
@@ -39,7 +39,7 @@ body{
     margin-bottom: 900px;
     padding: 20px;
     position:relative;
-    background-color: aqua;
+    background-color: lightgray;
 
 }
 
@@ -60,13 +60,14 @@ body{
     border-color: black;
     border-radius: 5px;
     padding: 20px;
+    background-color: lightblue;
 }
 
 .card__description{
     padding: 0 1rem;
 
 }
-/* .card__btn{
+ .card__btn{
     padding: 1 rem;
     font-weight: bold;
     font-family: inherit;
@@ -79,13 +80,10 @@ body{
     color:black;
     border-radius: 0.2rem;
     transition: background 200ms ease-in,color 200ms ease-in;
-} */
+} 
 
-/* :hover{
-    transform: scale(1.02);
-} */
-/* :hover card__btn{
-    background-color: grey;
-    color:white
-} */
+ :hover .card{
+    transform: scale(1.05);
+} 
+ 
 

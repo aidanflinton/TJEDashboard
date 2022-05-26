@@ -33,9 +33,9 @@
     align-items: center;
   }
   .Sidebar{
-    height: auto;
+    height: 100%;
     width:250px;
-    margin-right: 800px;
+    margin-right: 100px;
     background-color:orange
   
   }
@@ -45,7 +45,7 @@
   }
   
   .SideBarList{
-    height:auto;
+    height:100%;
     padding:0%;
     width:100%;
   }
@@ -60,6 +60,7 @@
     justify-content:center;
     align-items: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: bold;
   }
   .SideBarList .row:hover{
     cursor: pointer;
