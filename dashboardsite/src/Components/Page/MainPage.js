@@ -3,6 +3,8 @@ import * as React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Login from '../Login/LoginPage.js';
 import Calendar from '../Calendar/Calendar.js'
+import TeacherDirectory from "../Directories/TeacherDirectory";
+import StudentDirectroy from "../Directories/StudentDirectroy";
 
 function Page() {
   return (
@@ -11,8 +13,8 @@ function Page() {
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
           <Route path="calendar" element={<Calendar />} />
-          <Route path="teachers" element={<TeachDir />} />
-          <Route path="students" element={<Stu />} />
+          <Route path="teachers" element={<TeacherDirectory />} />
+          <Route path="students" element={<StudentDirectroy />} />
           <Route path="login" element={<Login/>} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="class" element={<Class />} />
@@ -36,24 +38,10 @@ function Home() {
     </main>
   );
 }
-function TeachDir() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>TeachDir</h2>
-    </main>
-  );
-}
 function Class() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Class becuase Im doing calendar rn</h2>
-    </main>
-  );
-}
-function Stu() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>StuDir</h2>
     </main>
   );
 }
