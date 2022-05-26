@@ -4,6 +4,8 @@ import {ClassData} from "./ClassData";
 
 function SideBar(){
     return ( 
+    <div className="Wrapper">
+    <div className="SideBars">
     <div className="Sidebar">
     <ul className="SideBarList">
     {ClassData.map((val,key)=> {
@@ -26,9 +28,23 @@ function SideBar(){
     })}
     </ul>
     </div>
+    </div>
+   </div>
     );
         
 }
 
 export default SideBar;
+
+
+/*
+<div className="Wrapper">
+    <div className="SideBars">
+
+    <Sidebar/>
+    
+    
+    </div>
+   </div>
+*/
 
