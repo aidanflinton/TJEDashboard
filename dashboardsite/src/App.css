@@ -1,38 +1,82 @@
 .App {
+  width:100vw;
+  height:100vh;
+}
+
+body{
+  margin:0;
+  padding:0;
+
+}
+.classText{
   text-align: center;
+  font-size: xx-large;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  height: 100px;
+  background-color: black;
+  color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box{
+  background-color: aqua;
+  padding: 0px;
+  margin-left: 500px;
+  margin-bottom: 1000px;
+  width: 250px;
+  height: 250px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.ClassHeader{
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.Sidebar{
+  height: 100%;
+  width:250px;
+  background-color:orange
+
 }
 
-.App-link {
-  color: #61dafb;
+.Profile{
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SideBarList{
+  height:auto;
+  padding:0%;
+  width:100%;
 }
+
+.SideBarList .row{
+  width:100%;
+  height:60px;
+  list-style-type:none;
+  margin:0%;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.SideBarList .row:hover{
+  cursor: pointer;
+  background-color: beige;
+}
+.row #icon{
+  flex:30%;
+  display: grid;
+  place-items: center;
+}
+.row #title{
+  flex:70%
+}
+
+.SideBars{
+
+  margin-right: 500px;
+}
+
+
+
+
