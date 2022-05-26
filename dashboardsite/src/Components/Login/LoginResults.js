@@ -8,40 +8,42 @@ import { collection, getDocs } from "firebase/firestore";
 
 function LoginResults(props) {
     const [teachers, setTeachers] = useState([]);
-    const [teacherId, setTeacherId] = useState(null);
+    const [teacherId, setTeacherId] = useState(0);
 
     useEffect(() => {
         const teacherList = []
+        let teacherSubId = 0;
         getDocs(collection(db, "teachers"))
         .then((allTeachers) => {
             allTeachers.forEach((teacher) => 
-                teacherList.push({firstName:teacher.firstName, lastName:teacher.lastName, email:teacher.email, password:teacher.password, id:teacher.id, ...teacher.data()
-            }))
-            return teacherList;
+            teacherList.push({firstName:teacher.firstName, lastName:teacher.lastName, email:teacher.email, password:teacher.password, id:teacher.id, ...teacher.data()
+            }));
+            console.log(teacherList);
+            setTeachers(teacherList);
+            const email = props.user;
+            const pass = props.pass;
+            // let count = 0;
+            // let count1 = 0;
+            teacherList.forEach((teacher) => {
+                if(teacher.email == email && teacher.password == pass){
+                    teacherSubId = teacher.id;
+                    // count1++;
+                }
+                // count++;
+            })
+            // console.log(count);
+            // console.log(count1);
+            // console.log(teacherSubId); 
+            setTeacherId(teacherSubId);
+            console.log(teacherId);
         })
-        .then( (list) =>{
-            console.log(list);
-            setTeachers(list);
-            return teachers;
-            }
-        )
-        .then( (teachers) =>
-            {teachers.forEach((teacher) => {
-                if(teacher.email === props.user && teacher.password === props.pass){
-                    setTeacherId(teacher.id) 
-                    console.log(teacher.id);
-                }})
-            console.log(teacherId)
-        }
-        )
-        setTeacherId(teacherId);
-  }, []) 
-
- 
+        
+    }, []);
   
     return(
         <>
-            {<LoginOutput teacherId={teacherId}/>}
+            {/* {LoginOutput(teacherId)} */}
+            <LoginOutput  teacherId={teacherId} logIn={props.logIn}/>
         </>
     );
 }
