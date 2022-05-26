@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="App">
+    <div className="Sidebar">
       <nav>
         <Link to="/">Home</Link> |{" "}
         <Link to="/calendar">Calendar</Link> |{" "}
@@ -18,3 +18,28 @@ function Navbar() {
 }
 
 export default Navbar;
+
+/*
+<div className="Sidebar">
+    <ul className="SideBarList">
+    {ClassData.map((val,key)=> {
+        return (
+            <li 
+            key={key} 
+            className="row"
+            onClick={()=>{window.location.pathname=val.link}}>
+            {" "}
+
+        <div id="icon">{val.icon}</div>{" "}
+        <div id="title">
+            {val.title}
+
+        </div>
+        
+        
+        </li>
+        );
+    })}
+    </ul>
+    </div>
+    */
