@@ -5,7 +5,6 @@ import Login from '../Login/LoginPage.js';
 import Calendar from '../Calendar/Calendar.js'
 import TeacherDirectory from "../Directories/TeacherDirectory";
 import StudentDirectroy from "../Directories/StudentDirectroy";
-import Sidebar from "../SideBar/SideBar.js"
 import Card from "../ClassPage/Card.js"
 
 
@@ -19,7 +18,6 @@ function Page(props) {
           <Route path="teachers" element={<TeacherDirectory />} />
           <Route path="students" element={<StudentDirectroy />} />
           <Route path="login" element={<Login logIn={props.logIn}/>} />
-          <Route path="dashboard" element={<Sidebar />} />
           <Route path="class" element={<Class loggedIn={props.loggedIn}/>} />
           
           <Route path="*" element={<Error />} />
@@ -73,13 +71,6 @@ function Class(props) {
     <>
       Login to acces this material
     </>
-  );
-}
-function Dashboard() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>dashboard</h2>
-    </main>
   );
 }
 function Error() {
