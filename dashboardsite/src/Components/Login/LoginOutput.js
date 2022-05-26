@@ -1,4 +1,5 @@
 import * as React from "react";
+import LoginPage from "./LoginPage";
 
 function LoginOutput(props) {
 
@@ -13,6 +14,7 @@ if(props.teacherId){
     return (
     <div className="App"> 
         Your user name or password was wrong, please try again
+        {/* {window.location.reload(false)} */}
     </div>
   );
   
