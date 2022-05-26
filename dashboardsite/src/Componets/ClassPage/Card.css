@@ -19,9 +19,9 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
     gap:2rem;
-    margin-top: 200px;
-    margin-right: 300px;
-    justify-content: center;
+    margin-left: 300px;
+    margin-bottom: 300px;
+    justify-content:top;
 }
 
 .card{
@@ -36,7 +36,10 @@ body{
     border-style: solid;
     border-color: black;
     border-radius: 25px;
+    margin-bottom: 900px;
     padding: 20px;
+    position:relative;
+    background-color: aqua;
 
 }
 
