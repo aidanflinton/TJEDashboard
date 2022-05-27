@@ -33,7 +33,7 @@ function Calendar() {
     console.log(events);
 
     return(
-    <div>
+    <div className='Calender'>
     <TableContainer component={Paper}>
         <Table aria-label='Teacher Directory'>
             <TableHead>

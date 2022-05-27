@@ -19,7 +19,7 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div >
       <nav>
       <Fab variant="extended">
         <Link to="/">Dashboard</Link>

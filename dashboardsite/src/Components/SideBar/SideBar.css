@@ -1,6 +1,6 @@
-.App {
+.Apper {
     width:100vw;
-    height:100vh;
+    height:100%;
     position: absolute;
   }
   
@@ -35,8 +35,7 @@
   .Sidebar{
     height: 100%;
     width:20%;
-    margin-right: 100px;
-    background-color:orange
+    background-color:lightskyblue
   
   }
   

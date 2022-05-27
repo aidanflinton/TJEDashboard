@@ -16,12 +16,12 @@ body{
 }
 
 .Wrapper{
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
     gap:2rem;
     margin-left: 300px;
-    margin-top: 100px;
-    justify-content:top;
+    margin-top: 50px;
+    justify-content:center;
 }
 
 .card{
@@ -36,10 +36,9 @@ body{
     border-style: solid;
     border-color: black;
     border-radius: 25px;
-    margin-bottom: 900px;
     padding: 20px;
     position:relative;
-    background-color: lightgray;
+    background-color:lightseagreen;
 
 }
 
@@ -60,7 +59,7 @@ body{
     border-color: black;
     border-radius: 5px;
     padding: 20px;
-    background-color: lightblue;
+    background-color:lightskyblue;
 }
 
 .card__description{
