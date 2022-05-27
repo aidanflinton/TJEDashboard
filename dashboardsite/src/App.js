@@ -10,14 +10,13 @@ function App() {
   return (
     <>
     <SideBar/>
-    <div className="App">
+    <div className='App'>
       <header>
         TJE Website
       </header>
       <Page loggedIn={log} logIn={setLog}/>
       
     </div>
-    
   </>
   )
 ;
