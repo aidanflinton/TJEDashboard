@@ -9,10 +9,8 @@ function App() {
 
   return (
     <>
+    <SideBar/>
     <div className="App">
-    <div className='Apper'>
-      <SideBar/>
-    </div>
       <header>
         TJE Website
       </header>
