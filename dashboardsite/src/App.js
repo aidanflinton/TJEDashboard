@@ -19,7 +19,6 @@ function App() {
       <Page loggedIn={log} logIn={setLog}/>
       
     </div>
-    
   </>
   )
 ;
