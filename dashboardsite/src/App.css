@@ -5,6 +5,13 @@
   position: relative;
 }
 
+.Apper {
+  width:100vw;
+  height:100vh;
+  position: absolute;
+}
+
+
 body{
   margin:0;
   padding:0;
