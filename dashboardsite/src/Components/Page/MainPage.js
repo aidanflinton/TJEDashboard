@@ -21,6 +21,13 @@ function Page(props) {
           <Route path="class" element={<Class loggedIn={props.loggedIn}/>} />
           
           <Route path="*" element={<Error />} />
+
+          <Route path="kindergarten" element={<Kindergarten />} />
+          <Route path="1stgrade" element={<Grade1 />} />
+          <Route path="2ndgrade" element={<Grade2 />} />
+          <Route path="3rdgrade" element={<Grade3 />} />
+          <Route path="4thgrade" element={<Grade4 />} />
+          <Route path="5thgrade" element={<Grade5 />} />
         </Route>
       </Routes>
     </div>
@@ -80,6 +87,49 @@ function Error() {
         <p>
             <Link to="/">This link can take you back home though</Link>
         </p>
+    </main>
+  );
+}
+
+function Kindergarten() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>Kindergarten</h2>
+    </main>
+  );
+}
+function Grade1() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>1st Grade</h2>
+    </main>
+  );
+}
+function Grade2() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>2nd Grade</h2>
+    </main>
+  );
+}
+function Grade3() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>3rd Grade</h2>
+    </main>
+  );
+}
+function Grade4() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>4th Grade</h2>
+    </main>
+  );
+}
+function Grade5() {
+  return (
+    <main style={{ padding: "1rem 0" }}>
+        <h2>5th Grade</h2>
     </main>
   );
 }

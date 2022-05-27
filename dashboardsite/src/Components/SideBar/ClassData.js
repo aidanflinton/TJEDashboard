@@ -11,13 +11,13 @@ export const ClassData=[
 
         title:"Home",
         icon:<HomeIcon/>,
-        link:"/home"
+        link:"/"
     },
     {
 
-        title:"Kindergarden",
+        title:"Kindergarten",
         icon:<HomeIcon/>,
-        link:"/Kindergarden"
+        link:"/kindergarten"
     },
     {
 
