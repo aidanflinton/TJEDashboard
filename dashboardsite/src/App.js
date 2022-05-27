@@ -14,7 +14,9 @@ function App() {
         TJE Website
       </header>
       <Page loggedIn={log} logIn={setLog}/>
-      <SideBar/>
+      <div className='leftSide'>
+        <SideBar/>
+      </div>
     </div>
   </>
   )
