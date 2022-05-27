@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div>
+    <div >
       <nav>
         <Link to="/">Dashboard</Link> |{" "}
         <Link to="/calendar">Calendar</Link> |{" "}
