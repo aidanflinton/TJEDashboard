@@ -9,15 +9,15 @@ function App() {
 
   return (
     <>
+    <SideBar/>
     <div className="App">
       <header>
         TJE Website
       </header>
       <Page loggedIn={log} logIn={setLog}/>
-      <div className='leftSide'>
-        <SideBar/>
-      </div>
+      
     </div>
+    
   </>
   )
 ;

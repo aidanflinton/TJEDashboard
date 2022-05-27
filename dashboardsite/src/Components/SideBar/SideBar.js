@@ -4,7 +4,6 @@ import {ClassData} from "./ClassData";
 
 function SideBar(){
     return ( 
-    <div className="App">
     <div className="SideBars">
     <div className="Sidebar">
     <ul className="SideBarList">
@@ -29,7 +28,6 @@ function SideBar(){
     </ul>
     </div>
     </div>
-   </div>
     );
         
 }
