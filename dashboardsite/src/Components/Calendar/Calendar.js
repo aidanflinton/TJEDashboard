@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import {TableContainer, Table,TableHead,TableBody,TableRow,TableCell,Paper} from '@mui/material';
 import { useState, useEffect}  from "react";
 
 import db from '../../firebase.js';
@@ -33,8 +34,22 @@ function Calendar() {
 
     return(
     <div>
-        {events && events.map((event) => <CalendarDisp name={event.name} date={new Date(event.date.seconds * 1000 + event.date.nanoseconds/1000000)} desc={event.description}/>)}  
+    <TableContainer component={Paper}>
+        <Table aria-label='Teacher Directory'>
+            <TableHead>
+                <TableRow>
+                    <TableCell sx={{fontSize: "2rem"}}>Event Name</TableCell>
+                    <TableCell sx={{fontSize: "2rem"}}>Date</TableCell>
+                    <TableCell sx={{fontSize: "2rem"}}>Description</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+        {events && events.map((event) => <CalendarDisp name={event.name} date={new Date(event.date.seconds * 1000 + event.date.nanoseconds/1000000)} desc={event.description}/>)} 
+        </TableBody>
+                </Table>
+    </TableContainer> 
         <AddEvent />
+
     </div>
     );
 }
