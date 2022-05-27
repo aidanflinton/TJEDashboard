@@ -100,6 +100,15 @@ body{
     color: white;
 }
 
+.leftSide {
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}
+
 .App-link {
     color: #61dafb;
 }
