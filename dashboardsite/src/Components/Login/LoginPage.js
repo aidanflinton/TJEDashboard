@@ -20,13 +20,13 @@ function LoginPage(props) {
 
     return(
     <>
-        <div className='App'>
+        <div>
         <Stack spacing={2}>
             <TextField id="username" label="Username" type="search"  inputRef={textFieldRef1} size="small"/>
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
         </Stack>  
-        {usr && pass && <LoginResults logIn={props.logIn} user={usr} pass={pass}/>} 
+            {usr && pass && <LoginResults logIn={props.logIn} user={usr} pass={pass}/>} 
         </div>
     </>
     );

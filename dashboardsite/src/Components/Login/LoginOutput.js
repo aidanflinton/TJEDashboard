@@ -6,13 +6,13 @@ if(props.teacherId){
     console.log(props.teacherId);
     props.logIn(true);
   return (
-    <div className="App">
+    <div>
         You successfully logged in
     </div>
   );
 }
     return (
-    <div className="App"> 
+    <div> 
         Your user name or password was wrong, please refresh the page and try again
     </div>
   );
