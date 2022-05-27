@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import { useState, useRef } from "react";
 
 import LoginResults from './LoginResults.js';
+import '../../App.css'
 
 function LoginPage(props) {
     const [usr, setUsr] = useState(null);
@@ -19,12 +20,14 @@ function LoginPage(props) {
 
     return(
     <>
+        <div className='App'>
         <Stack spacing={2}>
             <TextField id="username" label="Username" type="search"  inputRef={textFieldRef1} size="small"/>
             <TextField id="password" label="Password" type="search"  inputRef={textFieldRef2} size="small"/>
             <Button variant="contained" size="medium" onClick={() => handleClick(textFieldRef1.current.value, textFieldRef2.current.value)}>Submit</Button>
         </Stack>  
         {usr && pass && <LoginResults logIn={props.logIn} user={usr} pass={pass}/>} 
+        </div>
     </>
     );
 }

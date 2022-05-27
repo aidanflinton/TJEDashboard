@@ -1,7 +1,7 @@
 .App {
     width:100vw;
     height:100vh;
-    position:absolute;
+    position: absolute;
   }
   
   body{
@@ -34,7 +34,7 @@
   }
   .Sidebar{
     height: 100%;
-    width:250px;
+    width:20%;
     margin-right: 100px;
     background-color:orange
   
@@ -62,6 +62,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: bold;
   }
+  
   .SideBarList .row:hover{
     cursor: pointer;
     background-color: beige;
