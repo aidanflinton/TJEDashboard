@@ -12,7 +12,7 @@ import "./MainPage.css"
 
 function Page() {
   return (
-    <div className="App">
+    <div >
     <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
@@ -52,7 +52,7 @@ function Home() {
 }
 function Class() {
   return (
-    <div className='Wrapper'>
+    <div className="Wrapper">
       <Card
     img="https://media.istockphoto.com/photos/female-teacher-pointing-with-finger-at-mathematical-equation-on-in-picture-id1080232656?k=20&m=1080232656&s=612x612&w=0&h=7OszmnpcTXIiIhqUXUL3sOaI-nn9DisJU8z3ceeHL5k="
     title="Jane Doe"
@@ -82,7 +82,7 @@ function Class() {
 function Dashboard() {
   return (
     <main style={{ padding: "1rem 0" }}>
-      <h2>dashboard</h2>
+      <h2>Dashboard</h2>
     </main>
   );
 }
