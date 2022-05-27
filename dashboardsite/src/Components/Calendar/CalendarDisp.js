@@ -1,10 +1,4 @@
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Stack from '@mui/material/Stack';
-import { useState, useEffect, useRef } from "react";
+import {TableContainer, Table,TableHead,TableBody,TableRow,TableCell,Paper} from '@mui/material';
 
 function CalendarDisp(props) {
     function isAfterToday(date) {
@@ -16,20 +10,14 @@ function CalendarDisp(props) {
     if(isAfterToday(props.date))
     {return(
         <>
-        <h1>
-            {props.name} | {" "}
-            {props.desc} | {" "}
-            {props.date.toString().substring(0,21)}
-        </h1>
 
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            <ListItem
-            key='asdf'
-            disablePadding
-            >
-            <ListItemText id={props.name} primary={props.name} />
-          </ListItem>
-        </List>
+                        <TableRow key={props.name}
+                        sx={{fontSize: "2.25rem", '&:last-child td, &:last-childth':{border: 0}}}>
+                            <TableCell sx={{fontSize: "2rem"}}>{props.name}</TableCell>
+                            <TableCell sx={{fontSize: "2rem"}}>{props.date.toString().substring(0,21)}</TableCell>
+                            <TableCell sx={{fontSize: "2rem"}}>{props.desc}</TableCell>
+                        </TableRow>
+
         </>
     );}
 }
